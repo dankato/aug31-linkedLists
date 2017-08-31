@@ -70,6 +70,12 @@ list.insert(0, 'one');
 list.insert(1, 'two');
 list.insert(2, 'three');
 list.insert(3, 'four');
+list.insert(4, 'five');
+list.insert(5, 'six');
+list.insert(6, 'seven');
+list.insert(7, 'eight');
+list.insert(8, 'nine');
+list.insert(9, 'ten');
 // console.log('middle: ',list);
 // console.log('get 2: ', list.get(2));
 // console.log('remove 3: ', list.remove(3));
@@ -127,12 +133,12 @@ const isEmpty = list => (list.head === null ? true : false);
 
 // find previous
 console.log('Find Previous -----------');
-const findPrevious = (jonlist, node) => {
-  let newNode = jonlist.head;
-  while (newNode.next.value !== node) {
-    newNode = newNode.next;
+const findPrevious = (jonlist, targetValue) => {
+  let node = jonlist.head;
+  while (node.next !== null && node.next.value !== targetValue) {
+    node = node.next;
   }
-  return newNode.value;
+  return node.value;
 };
 
 // console.log(findPrevious(list, 'three'));
@@ -147,5 +153,24 @@ const findLast = jonlist => {
   }
   return node;
 };
+// console.log(findLast(list));
 
-console.log(findLast(list));
+//create function
+//start counter at 1
+//create while loop to interate thru until next = null
+//counter / 2
+//iterate thru again using ctr/2 number of times
+
+//Exercise 3 - find middle element
+console.log('Find Middle Element -----------');
+const findMiddle = jonlist => {
+  let slowRunner = jonlist.head;
+  let fastRunner = jonlist.head;
+  while (fastRunner.next !== null && fastRunner.next.next !== null){
+    slowRunner = slowRunner.next;
+    fastRunner = fastRunner.next.next;
+  }
+  return slowRunner.value;
+};
+
+console.log(findMiddle(list));
