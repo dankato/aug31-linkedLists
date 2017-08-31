@@ -97,7 +97,12 @@ const display = jonlist => {
   // extract the head
   let node = jonlist.head;
 
-  console.log('first node is: ', node.value);
+  console.log('first node is: ', node);
+	
+  if (node === null) {
+    return 'List is empty :(';
+  }
+
 
   // while loop, node.next until null, console.log(node.value)
   while (node.next !== null) {
@@ -105,10 +110,10 @@ const display = jonlist => {
     node = node.next;
     console.log('item: ', node.value);
   }
-  // console.log('node value----->', node.value);
-  return;
+  console.log('node value----->', node.value);
+  // return;
 };
-// display(list);
+display(list);
 
 // size
 console.log('Size -----------');
@@ -173,9 +178,10 @@ const findMiddle = jonlist => {
   return slowRunner.value;
 };
 
-console.log(findMiddle(list));
+// console.log(findMiddle(list));
 
 // --- Exercise 4 (3rd from last) ------
+console.log('Find Third to Last Element -----------');
 const thirdToLast = (jonlist) => {
 
   if(isEmpty(list)) {
@@ -192,6 +198,27 @@ const thirdToLast = (jonlist) => {
   return firstNode.value;
 };
 
-console.log('what is the 3rd node to last: ', thirdToLast(list));
+// console.log('what is the 3rd node to last: ', thirdToLast(list));
 
 // --- Exercise 5 (reverse linked list) ------
+console.log('Reversed List -----------');
+
+
+const reverseList = (jonlist) => {
+  let node = jonlist.head;
+  let previous = null;
+  while(node) {
+    let save = node.next;
+    node.next = previous;
+    previous = node;
+		node = save;
+		// console.log(node);
+  }
+  return previous;
+};
+let reverse = reverseList(list);
+console.log('XXXXXXX---->',reverse);
+// display(reverse);
+// console.log('reversed list: ', display(reverse));
+
+// --- Exercise 6 (cycle) ------
