@@ -61,12 +61,31 @@ class LinkedList {
     this.length--;
   }
 }
+const list = new LinkedList();
+
+// Tests
+console.log('initial: ',list);
+list.insert(0, 'one');
+list.insert(1, 'two');
+list.insert(2, 'three');
+list.insert(3, 'four');
+console.log('middle: ',list);
+console.log('get 2: ', list.get(2));
+console.log('remove 3: ', list.remove(3));
+console.log('final: ',list);
+
 
 // --- Exercise 2 (Helper Functions) ------
 
 // display
-
-
+console.log('Display -----------');
+const display = (jonlist) => {
+  let length = jonlist.length;
+  for(let i = 0; i < length; i++) {
+    console.log('item: ', list.get(i));
+  }
+};
+display(list);
 
 // size
 
@@ -82,14 +101,3 @@ class LinkedList {
 
 
 
-// Tests
-const list = new LinkedList();
-console.log('initial: ',list);
-list.insert(0, 'one');
-list.insert(1, 'two');
-list.insert(2, 'three');
-list.insert(3, 'four');
-console.log('middle: ',list);
-console.log('get 2: ', list.get(2));
-console.log('remove 3: ', list.remove(3));
-console.log('final: ',list);
