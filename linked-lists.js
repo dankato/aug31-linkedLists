@@ -174,3 +174,24 @@ const findMiddle = jonlist => {
 };
 
 console.log(findMiddle(list));
+
+// --- Exercise 4 (3rd from last) ------
+const thirdToLast = (jonlist) => {
+
+  if(isEmpty(list)) {
+    return new Error('the list empty');
+  }
+
+  let firstNode = jonlist.head;
+  let lastNode = jonlist.head.next;
+
+  while(lastNode.next !== null && lastNode.next.next !== null ) {
+    firstNode = firstNode.next;
+    lastNode = lastNode.next;
+  }
+  return firstNode.value;
+};
+
+console.log('what is the 3rd node to last: ', thirdToLast(list));
+
+// --- Exercise 5 (reverse linked list) ------
