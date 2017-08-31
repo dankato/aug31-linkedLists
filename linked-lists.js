@@ -88,6 +88,26 @@ const display = (jonlist) => {
 display(list);
 
 // size
+console.log('Size -----------');
+const size = (jonlist) => {
+	let counter = 0;
+
+	// bubbling
+	//var begin = list.head
+	// for () {
+	// var newList = list.head
+	//newList= newList + '.next'
+	// }
+  while(list.head.next !== null) {
+		counter++;
+    console.log('counter: ',counter);
+  }
+	return counter;
+};
+// size(list);
+
+console.log('1----->',list.node);
+console.log('2------>', list.head.next.next.next);
 
 
 
