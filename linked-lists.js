@@ -95,18 +95,20 @@ console.log('Display -----------');
 const display = (jonlist) => {
 
 	// extract the head
-	let node = jonlist.head;
+  let node = jonlist.head;
 	
 	console.log('first node is: ', node.value);
 
 	// while loop, node.next until null, console.log(node.value)
   while(node.next !== null) {
+    // console.log('node------>', node);
     node = node.next; 
     console.log('item: ',node.value);
   }
+  // console.log('node value----->', node.value);
   return;
 };
-display(list);
+// display(list);
 
 // size
 console.log('Size -----------');
@@ -114,24 +116,30 @@ const size = (jonlist) => {
   
   let counter = 1;
   let node = jonlist.head;
-	console.log('counter starts at: ', counter);
+  console.log('counter starts at: ', counter);
   while(node.next !== null) {
     counter++;
     node = node.next; 
-    console.log('counter: ',counter);
+    console.log('counter: ', counter);
   }
   return counter;
 };
-size(list);
+// console.log('list is this big: ', size(list));
 
 
 // empty
-console.log('Empty -----------');
+// console.log('Empty -----------');
 const isEmpty = (list) => (list.head === null) ? true : false;
-console.log(isEmpty(secondList));
+// console.log(isEmpty(list));
+// console.log(isEmpty(secondList));
+
 
 // find previous
 console.log('Find Previous -----------');
+
+
+
+
 
 // find last
 
